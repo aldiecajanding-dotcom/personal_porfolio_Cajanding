@@ -6,6 +6,7 @@ const sections = [...document.querySelectorAll("main section[id]")];
 const revealItems = document.querySelectorAll(".reveal");
 const canvas = document.querySelector(".particle-canvas");
 const pointerGlow = document.querySelector(".pointer-glow");
+const scrollProgress = document.querySelector(".scroll-progress");
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 window.addEventListener("load", () => {
@@ -56,6 +57,16 @@ const sectionObserver = new IntersectionObserver(
 sections.forEach((section) => sectionObserver.observe(section));
 
 document.querySelector("#current-year").textContent = String(new Date().getFullYear());
+
+function updateScrollProgress() {
+  if (!scrollProgress) return;
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollable > 0 ? window.scrollY / scrollable : 0;
+  scrollProgress.style.transform = `scaleX(${Math.min(1, Math.max(0, progress))})`;
+}
+window.addEventListener("scroll", updateScrollProgress, { passive: true });
+window.addEventListener("resize", updateScrollProgress, { passive: true });
+updateScrollProgress();
 
 const contactForm = document.querySelector(".contact-form");
 contactForm.addEventListener("submit", (event) => {
@@ -151,6 +162,23 @@ if (pointerGlow && window.matchMedia("(pointer: fine)").matches && !reducedMotio
   );
 }
 
+// A lightweight workshop-style spotlight follows the pointer over interactive cards.
+if (window.matchMedia("(pointer: fine)").matches && !reducedMotion.matches) {
+  const spotlightItems = document.querySelectorAll(".passion-card, .bike-card, .project-visual, .milestone-card, .signal-card, .education-card, .skill-board, .skills-note, .terminal, .contact-form");
+  spotlightItems.forEach((card) => {
+    card.classList.add("spotlight-card");
+    const glow = document.createElement("span");
+    glow.className = "card-glow";
+    glow.setAttribute("aria-hidden", "true");
+    card.append(glow);
+    card.addEventListener("pointermove", (event) => {
+      const bounds = card.getBoundingClientRect();
+      card.style.setProperty("--spot-x", `${event.clientX - bounds.left}px`);
+      card.style.setProperty("--spot-y", `${event.clientY - bounds.top}px`);
+    }, { passive: true });
+  });
+}
+
 // Interactive RPM meter: the hidden range control keeps the decorative gauge keyboard-accessible.
 const rpmControl = document.querySelector(".rpm-control");
 const tachometer = document.querySelector(".tachometer");
@@ -209,7 +237,13 @@ terminalForm?.addEventListener("submit", (event) => {
   if (command === "clear") terminalOutput.innerHTML = "";
   else {
     const response = terminalCommands[command] || `Command not found: ${command}. Type help.`;
-    terminalOutput.insertAdjacentHTML("beforeend", `<p><strong>&gt; ${command}</strong></p><p>${response}</p>`);
+    const commandLine = document.createElement("p");
+    const commandText = document.createElement("strong");
+    commandText.textContent = `> ${command}`;
+    commandLine.append(commandText);
+    const responseLine = document.createElement("p");
+    responseLine.textContent = response;
+    terminalOutput.append(commandLine, responseLine);
   }
   terminalInput.value = "";
   terminalOutput.scrollTop = terminalOutput.scrollHeight;
@@ -220,7 +254,10 @@ const soundToggle = document.querySelector(".sound-toggle");
 let audioContext;
 function playClick() {
   if (!soundToggle?.matches('[aria-pressed="true"]')) return;
-  audioContext ||= new AudioContext();
+  const AudioContextConstructor = window.AudioContext || window.webkitAudioContext;
+  if (!AudioContextConstructor) return;
+  audioContext ||= new AudioContextConstructor();
+  if (audioContext.state === "suspended") audioContext.resume();
   const oscillator = audioContext.createOscillator();
   const gain = audioContext.createGain();
   oscillator.frequency.value = 130;
