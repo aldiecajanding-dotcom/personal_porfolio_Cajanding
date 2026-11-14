@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Aldie's Garage — the personal portfolio of Aldie G. Cajanding, mechanic by heart and IT student by destiny."
+    />
+    <meta name="theme-color" content="#08090d" />
+    <title>ALDIE'S GARAGE | Mechanic by Heart. IT by Destiny.</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <symbol id="i-arrow" viewBox="0 0 24 24">
+        <path d="M5 12h14M13 5l7 7-7 7" />
+      </symbol>
+      <symbol id="i-arrow-up" viewBox="0 0 24 24">
+        <path d="M7 17 17 7M7 7h10v10" />
+      </symbol>
+      <symbol id="i-spark" viewBox="0 0 24 24">
+        <path d="m12 2-1.6 7.1L4 12l6.4 1.1L12 21l1.6-7.9L20 12l-6.4-2.9L12 2Z" />
+      </symbol>
+      <symbol id="i-code" viewBox="0 0 24 24">
+        <path d="m8 8-4 4 4 4m8-8 4 4-4 4m-2-9-4 10" />
+      </symbol>
+      <symbol id="i-grid" viewBox="0 0 24 24">
+        <rect x="3" y="3" width="7" height="7" rx="1" />
+        <rect x="14" y="3" width="7" height="7" rx="1" />
+        <rect x="3" y="14" width="7" height="7" rx="1" />
+        <rect x="14" y="14" width="7" height="7" rx="1" />
+      </symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24">
+        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6ZM2 9h4v12H2zM4 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z" />
+      </symbol>
+      <symbol id="i-github" viewBox="0 0 24 24">
+        <path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 6v-3.9a3.4 3.4 0 0 0-.9-2.6c3-.3 6.1-1.5 6.1-6.7a5.2 5.2 0 0 0-1.4-3.6 4.8 4.8 0 0 0-.1-3.6S17.5 1.3 14 3.7a13 13 0 0 0-7 0C3.5 1.3 2.3 1.6 2.3 1.6a4.8 4.8 0 0 0-.1 3.6A5.2 5.2 0 0 0 .8 8.8c0 5.2 3.1 6.4 6.1 6.7A3.4 3.4 0 0 0 6 18v4" transform="translate(2 0)" />
+      </symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24">
+        <rect x="3" y="5" width="18" height="14" rx="2" />
+        <path d="m3 7 9 6 9-6" />
+      </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24">
+        <path d="M4 7h16M4 12h16M4 17h16" />
+      </symbol>
+      <symbol id="i-close" viewBox="0 0 24 24">
+        <path d="m6 6 12 12M18 6 6 18" />
+      </symbol>
+    </svg>
+
+    <div class="page-loader" aria-hidden="true">
+      <div class="loader-brand"><span class="brand-mark">A</span>LDIE'S GARAGE</div>
+      <div class="loader-track"><span></span></div>
+      <p>WARMING UP THE ENGINE</p>
+    </div>
+
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+    <canvas class="particle-canvas" aria-hidden="true"></canvas>
+    <div class="pointer-glow" aria-hidden="true"></div>
+    <div class="noise-overlay" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Aldie's Garage home">
+        <span class="brand-mark">A</span><span>LDIE'S GARAGE</span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a class="nav-link is-active" href="#home">Home<span>01</span></a>
+        <a class="nav-link" href="#about">Story<span>02</span></a>
+        <a class="nav-link" href="#passion">My Passion<span>03</span></a>
+        <a class="nav-link" href="#garage">Garage<span>04</span></a>
+        <a class="nav-link" href="#skills">IT Skills<span>05</span></a>
+        <a class="nav-link" href="#work">Projects<span>06</span></a>
+        <a class="nav-link" href="#journey">Journey<span>07</span></a>
+        <a class="nav-link" href="#recognition">Achievements<span>08</span></a>
+        <a class="nav-link" href="#contact">Contact<span>09</span></a>
+      </nav>
+      <a class="header-cta" href="#contact">
+        <span>LET’S TALK</span><svg class="icon"><use href="#i-arrow-up" /></svg>
+      </a>
+      <button class="sound-toggle" type="button" aria-pressed="false" aria-label="Sound effects are muted">SOUND / OFF</button>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+        <svg class="icon menu-open"><use href="#i-menu" /></svg>
+        <svg class="icon menu-close"><use href="#i-close" /></svg>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero section-shell" id="home" aria-labelledby="hero-title">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow hero-eyebrow"><span class="live-dot"></span> AVAILABLE FOR WHAT’S NEXT</div>
+            <h1 id="hero-title">MECHANIC<br /><span class="gradient-text">BY HEART<span class="title-period">.</span></span></h1>
+            <div class="hero-role">IT STUDENT <span></span> BY DESTINY</div>
+            <p class="hero-intro">I may be studying code, but my passion has always been <span class="text-bright">engines, machines,</span> and the art of building something from scratch.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#about">
+                <span>EXPLORE MY STORY</span><svg class="icon"><use href="#i-arrow" /></svg>
+              </a>
+              <a class="text-link" href="#work"><span>VIEW MY PROJECTS</span><svg class="icon"><use href="#i-arrow-up" /></svg></a>
+            </div>
+            <div class="hero-meta">
+              <div><span class="meta-label">CURRENTLY</span><span class="meta-value"><i class="tiny-spark">✳</i> BSIT student</span></div>
+              <div><span class="meta-label">BASED IN</span><span class="meta-value">Malolos, Bulacan <span class="flag">PH</span></span></div>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-label="Motorcycle garage inspired artwork representing Aldie Cajanding">
+            <div class="engine-backdrop" aria-hidden="true"><span class="gear gear-one">⚙</span><span class="gear gear-two">⚙</span><span class="tachometer"><i></i><b>9</b><small>RPM × 1000</small><input class="rpm-control" type="range" min="1" max="10" value="9" aria-label="Interactive RPM meter" /></span></div>
+            <div class="visual-orbit orbit-outer"></div>
+            <div class="visual-orbit orbit-inner"></div>
+            <div class="orbit-label orbit-label-top">CREATIVE<br />ENERGY / 01</div>
+            <div class="orbit-label orbit-label-bottom">EST. IN<br />THE MAKING</div>
+            <div class="visual-crosshair crosshair-one"></div>
+            <div class="visual-crosshair crosshair-two"></div>
+            <div class="hero-art">
+              <div class="art-glow"></div>
+              <div class="art-number">AC<span> / VOLTAGE</span></div>
+              <svg class="energy-art" viewBox="0 0 430 470" role="img" aria-label="Abstract electric blue and violet energy shape">
+                <defs>
+                  <linearGradient id="energyFill" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#b3fbff" />
+                    <stop offset="35%" stop-color="#37d8ee" />
+                    <stop offset="68%" stop-color="#7782ff" />
+                    <stop offset="100%" stop-color="#d17bff" />
+                  </linearGradient>
+                  <linearGradient id="energyEdge" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#45edf4" />
+                    <stop offset="100%" stop-color="#b476ff" />
+                  </linearGradient>
+                  <filter id="energyGlow" x="-80%" y="-80%" width="260%" height="260%">
+                    <feGaussianBlur stdDeviation="10" result="blur" />
+                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                  </filter>
+                  <clipPath id="frameClip"><path d="M79 18h272l48 48v318l-48 48H79l-48-48V66z" /></clipPath>
+                </defs>
+                <path class="art-frame" d="M79 18h272l48 48v318l-48 48H79l-48-48V66z" />
+                <g clip-path="url(#frameClip)">
+                  <path class="art-grid" d="M20 88h390M20 145h390M20 202h390M20 259h390M20 316h390M20 373h390M87 0v470M144 0v470M201 0v470M258 0v470M315 0v470" />
+                  <path class="energy-ribbon ribbon-back" d="m96 380 73-135-50-14 129-148-49 139 78-23-144 187 38-105z" />
+                  <path class="energy-ribbon ribbon-main" d="m173 385 65-147-46-11 110-143-36 131 70-18-124 180 29-97z" />
+                  <path class="energy-cut" d="m213 126-40 99m98-2-35 42m-91 28-29 48m152-206-21 49" />
+                </g>
+                <path class="art-corner" d="M79 18h35M31 66v34m368 270v34m-48 48h-35" />
+              </svg>
+              <div class="art-coordinate">12°52' N&nbsp; / &nbsp;121°46' E</div>
+              <div class="art-caption"><span>01 — CREATIVE DEVELOPER</span><span>FIG. 001</span></div>
+            </div>
+            <div class="visual-stamp"><svg viewBox="0 0 100 100" aria-hidden="true"><defs><path id="stamp-path" d="M50 50m-35 0a35 35 0 1 1 70 0a35 35 0 1 1-70 0" /></defs><text><textPath href="#stamp-path">DESIGN · DEVELOP · DISCOVER · </textPath></text></svg><span>✳</span></div>
+            <div class="visual-index"><span>FIG 001</span><span class="index-line"></span><span>14° 35' 15.0&quot; N</span></div>
+          </div>
+        </div>
+
+        <div class="hero-bottom">
+          <a class="scroll-hint" href="#about"><span class="scroll-line"></span><span>SCROLL TO EXPLORE</span></a>
+          <div class="hero-bottom-note">A PORTFOLIO IN PROGRESS <span>— ALWAYS EVOLVING.</span></div>
+          <div class="hero-social"><a href="mailto:aldie.cajanding@gmail.com" aria-label="Email Aldie"><svg class="icon"><use href="#i-mail" /></svg></a><a href="https://github.com/" target="_blank" rel="noreferrer" aria-label="GitHub"><svg class="icon"><use href="#i-github" /></svg></a><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><svg class="icon"><use href="#i-linkedin" /></svg></a></div>
+        </div>
+        <div class="hero-lightning" aria-hidden="true"><span></span><span></span><span></span></div>
+      </section>
+
+      <div class="ticker" aria-label="Design, build, and make an impact">
+        <div class="ticker-track" aria-hidden="true">
+          <span>DESIGN WITH INTENTION</span><i>✳</i><span>BUILD WITH CURIOSITY</span><i>✳</i><span>MAKE AN IMPACT</span><i>✳</i><span>DESIGN WITH INTENTION</span><i>✳</i><span>BUILD WITH CURIOSITY</span><i>✳</i><span>MAKE AN IMPACT</span><i>✳</i>
+        </div>
+      </div>
+
+      <section class="about section-shell section-space" id="about" aria-labelledby="about-title">
+        <div class="section-heading reveal">
+          <span class="section-kicker">01 / THE BUILDER BEHIND THE MACHINE</span>
+          <h2 id="about-title">A little about<br /><span class="gradient-text">the builder.</span></h2>
+        </div>
+        <div class="about-layout">
+          <div class="about-copy reveal">
+            <div class="about-portrait"><img src="assets/profile.jpg" alt="Aldie G. Cajanding portrait" /><span>THE BUILDER / 001</span></div>
+            <p class="large-copy">Two worlds. <span class="text-bright">One dream.</span> A mind wired to understand how things move.</p>
+            <p class="body-copy">I’m Aldie G. Cajanding, currently taking BSIT at La Consolacion University Philippines in Malolos, Bulacan. I have always been drawn to motorcycles, mechanical systems, and the hands-on satisfaction of making something work again.</p>
+            <p class="body-copy">My original dream was to become a professional motorcycle mechanic. Today, I’m building my digital skills while carrying the same patience, creativity, and problem-solving mindset from the garage into every line of code.</p>
+            <div class="profile-facts" aria-label="Aldie's profile details">
+              <div class="fact-item"><span class="fact-label">COURSE</span><strong>BSIT</strong><small>Bachelor of Science in Information Technology</small></div>
+              <div class="fact-item"><span class="fact-label">SCHOOL</span><strong>La Consolacion</strong><small>University Philippines</small></div>
+              <div class="fact-item"><span class="fact-label">LOCATION</span><strong>Malolos, Bulacan</strong><small>Philippines · PH</small></div>
+              <div class="fact-item"><span class="fact-label">FOCUS</span><strong>Build & troubleshoot</strong><small>Web, systems, and machines</small></div>
+            </div>
+            <a class="inline-link" href="#contact">LET’S CONNECT <svg class="icon"><use href="#i-arrow" /></svg></a>
+          </div>
+          <div class="about-side">
+            <article class="signal-card reveal">
+              <div class="card-topline"><span>THE FREQUENCY</span><span>001 — 003</span></div>
+              <div class="frequency-list">
+                <div class="frequency-item"><span class="frequency-no">01</span><span class="frequency-name">BSIT student</span><span class="frequency-state">IN PROGRESS <i></i></span></div>
+                <div class="frequency-item"><span class="frequency-no">02</span><span class="frequency-name">Garage mindset</span><span class="frequency-state">ACTIVE <i></i></span></div>
+                <div class="frequency-item"><span class="frequency-no">03</span><span class="frequency-name">Always building</span><span class="frequency-state">ON AIR <i></i></span></div>
+              </div>
+              <div class="signal-wave" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            </article>
+            <article class="education-card reveal">
+              <div class="edu-icon"><svg class="icon"><use href="#i-spark" /></svg></div>
+              <div class="edu-info"><span class="edu-label">CURRENT CHAPTER</span><h3>BSIT / Information Technology</h3><p>La Consolacion University Philippines · Malolos, Bulacan</p></div>
+              <span class="edu-year">NOW ↗</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="passion section-shell section-space" id="passion" aria-labelledby="passion-title">
+        <div class="section-heading section-heading-row reveal"><div><span class="section-kicker">03 / THE GARAGE FREQUENCY</span><h2 id="passion-title">My passion is<br /><span class="gradient-text">mechanical.</span></h2></div><p class="section-side-note">Before the code, there was<br />the sound of an engine.</p></div>
+        <div class="passion-grid">
+          <article class="passion-card passion-engine reveal"><span class="passion-index">01 / POWERTRAIN</span><div class="engine-graphic"><span class="piston piston-a"></span><span class="piston piston-b"></span><span class="crank"></span></div><h3>Motorcycle engines</h3><p>Understanding the rhythm, pressure, and precision inside the machine.</p></article>
+          <article class="passion-card reveal"><span class="passion-index">02 / RESTORATION</span><span class="passion-symbol">⟲</span><h3>Engine rebuilding</h3><p>Disassemble. Diagnose. Rebuild. Every component has a purpose.</p><span class="passion-line"></span></article>
+          <article class="passion-card reveal"><span class="passion-index">03 / RACE SPEC</span><span class="passion-symbol">↗</span><h3>Performance machines</h3><p>Racing culture, customization, and the pursuit of a cleaner line.</p><span class="passion-line red-line"></span></article>
+          <article class="passion-card reveal"><span class="passion-index">04 / DIAGNOSTICS</span><span class="passion-symbol">⌁</span><h3>Mechanical troubleshooting</h3><p>Listen closely, find the signal, solve the problem.</p><span class="passion-line"></span></article>
+        </div>
+      </section>
+
+      <section class="garage section-shell section-space" id="garage" aria-labelledby="garage-title">
+        <div class="section-heading section-heading-row reveal"><div><span class="section-kicker">04 / MACHINES THAT INSPIRE ME</span><h2 id="garage-title">My dream<br /><span class="gradient-text">machines.</span></h2></div><p class="section-side-note">A gallery of performance,<br />craft, and character.</p></div>
+        <div class="garage-grid">
+          <button class="bike-card bike-one reveal" type="button" data-lightbox-title="Cafe racer / 650 class" data-lightbox-copy="A clean, stripped-back silhouette that turns engineering into personality."><span class="bike-image bike-image-one"></span><span class="bike-spec">01 / CAFE RACER</span><strong>Minimal. Mechanical. Intentional.</strong><small>650 CLASS · CUSTOM BUILD</small></button>
+          <button class="bike-card bike-two reveal" type="button" data-lightbox-title="Track machine / race spec" data-lightbox-copy="Built around speed, balance, and the discipline of getting every detail right."><span class="bike-image bike-image-two"></span><span class="bike-spec">02 / RACE SPEC</span><strong>Speed with a purpose.</strong><small>PERFORMANCE · CIRCUIT DNA</small></button>
+          <button class="bike-card bike-three reveal" type="button" data-lightbox-title="Street fighter / custom" data-lightbox-copy="A reminder that customization is a form of problem-solving you can see and feel."><span class="bike-image bike-image-three"></span><span class="bike-spec">03 / CUSTOM STREET</span><strong>Character in every component.</strong><small>RESTORATION · PERSONAL STYLE</small></button>
+        </div>
+      </section>
+
+      <section class="skills section-shell section-space" id="skills" aria-labelledby="skills-title">
+        <div class="section-heading section-heading-row reveal">
+          <div><span class="section-kicker">05 / THE DIGITAL ENGINE</span><h2 id="skills-title">Learning the<br /><span class="gradient-text">digital engine.</span></h2></div>
+          <p class="section-side-note">A growing toolkit, not a finished list.<br />The best skill is the next one.</p>
+        </div>
+        <div class="skills-layout">
+          <div class="skill-board reveal">
+            <div class="skill-board-head"><span>TECHNICAL FREQUENCIES</span><span>LIVE SIGNALS <i class="live-dot"></i></span></div>
+            <div class="skill-grid">
+              <div class="skill-item"><span class="skill-num">01</span><div class="skill-main"><span class="skill-name">HTML</span><span class="skill-track"><i style="--level: 84%"></i></span></div><span class="skill-status">BUILDING</span></div>
+              <div class="skill-item"><span class="skill-num">02</span><div class="skill-main"><span class="skill-name">CSS</span><span class="skill-track"><i style="--level: 78%"></i></span></div><span class="skill-status">BUILDING</span></div>
+              <div class="skill-item"><span class="skill-num">03</span><div class="skill-main"><span class="skill-name">JAVASCRIPT</span><span class="skill-track"><i style="--level: 60%"></i></span></div><span class="skill-status">LEARNING</span></div>
+              <div class="skill-item"><span class="skill-num">04</span><div class="skill-main"><span class="skill-name">JAVA</span><span class="skill-track"><i style="--level: 55%"></i></span></div><span class="skill-status">LEARNING</span></div>
+              <div class="skill-item"><span class="skill-num">05</span><div class="skill-main"><span class="skill-name">PHP</span><span class="skill-track"><i style="--level: 50%"></i></span></div><span class="skill-status">LEARNING</span></div>
+              <div class="skill-item"><span class="skill-num">06</span><div class="skill-main"><span class="skill-name">MYSQL</span><span class="skill-track"><i style="--level: 58%"></i></span></div><span class="skill-status">LEARNING</span></div>
+              <div class="skill-item"><span class="skill-num">07</span><div class="skill-main"><span class="skill-name">WEB DEVELOPMENT</span><span class="skill-track"><i style="--level: 70%"></i></span></div><span class="skill-status">EXPLORING</span></div>
+              <div class="skill-item"><span class="skill-num">08</span><div class="skill-main"><span class="skill-name">COMPUTER TROUBLESHOOTING</span><span class="skill-track"><i style="--level: 74%"></i></span></div><span class="skill-status">ALWAYS ON</span></div>
+            </div>
+          </div>
+          <div class="skills-note reveal"><div class="note-symbol"><svg class="icon"><use href="#i-code" /></svg></div><span class="note-kicker">A NOTE ON THE NUMBERS</span><p>Progress is a practice, not a percentage. These bars are a snapshot of where I’m investing my energy — not a ceiling on what I can do.</p><div class="note-bottom"><span>KEEP<br />GOING</span><svg class="icon"><use href="#i-arrow-up" /></svg></div></div>
+        </div>
+        <div class="terminal reveal" aria-label="Interactive portfolio terminal"><div class="terminal-head"><span>ALDIE_OS / DIGITAL WORKSHOP</span><span>● ● ●</span></div><div class="terminal-output" aria-live="polite"><p>Welcome to Aldie’s Garage terminal.</p><p>Type <strong>help</strong> to see available commands.</p></div><form class="terminal-form"><label for="terminal-input">&gt;</label><input id="terminal-input" autocomplete="off" placeholder="help" /><button type="submit">RUN</button></form></div>
+      </section>
+
+      <section class="work section-shell section-space" id="work" aria-labelledby="work-title">
+        <div class="section-heading section-heading-row reveal">
+          <div><span class="section-kicker">06 / A FEW THINGS IN MOTION</span><h2 id="work-title">Selected<br /><span class="gradient-text">experiments.</span></h2></div>
+          <p class="section-side-note">Small projects, big curiosity.<br />A glimpse of what I’m exploring.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project-card project-feature reveal">
+            <a class="project-visual project-visual-one" href="https://github.com/search?q=portfolio&type=repositories" target="_blank" rel="noreferrer" aria-label="Explore portfolio interface concept on GitHub">
+              <div class="project-topline"><span>CONCEPT 001</span><span>UI / FRONT-END</span></div>
+              <div class="mock-portfolio">
+                <div class="mock-nav"><span class="mock-logo">A<span>.</span></span><span>WORK &nbsp; ABOUT &nbsp; CONTACT</span><i></i></div>
+                <div class="mock-copy"><span>INDEPENDENT CREATIVE</span><strong>Digital<br /><em>craft.</em></strong><div class="mock-link">SELECTED WORK <b>↗</b></div></div>
+                <div class="mock-shape"></div>
+                <div class="mock-bottom"><span>INTERFACE DESIGN / 01</span><span>SCROLL TO EXPLORE ↓</span></div>
+              </div>
+              <div class="project-open"><svg class="icon"><use href="#i-arrow-up" /></svg></div>
+            </a>
+            <div class="project-info"><div><span class="project-index">01 — DIGITAL EXPERIENCE</span><h3>Portfolio in motion</h3><p>A dark, editorial portfolio concept built to turn a first impression into a feeling.</p><div class="tag-list"><span>HTML</span><span>CSS</span><span>INTERACTION</span></div></div><a class="project-arrow" href="https://github.com/search?q=portfolio&type=repositories" target="_blank" rel="noreferrer" aria-label="Search GitHub for portfolio projects"><svg class="icon"><use href="#i-arrow-up" /></svg></a></div>
+          </article>
+          <article class="project-card reveal">
+            <a class="project-visual project-visual-two" href="https://github.com/search?q=dashboard&type=repositories" target="_blank" rel="noreferrer" aria-label="Explore dashboard interface concept on GitHub">
+              <div class="project-topline"><span>CONCEPT 002</span><span>INTERFACE / DATA</span></div>
+              <div class="mock-dashboard">
+                <div class="dash-rail"><b>◈</b><i class="rail-active"></i><i></i><i></i><i></i><i></i></div>
+                <div class="dash-screen"><div class="dash-heading"><span>Overview</span><span>•••</span></div><div class="dash-sub">YOUR CREATIVE ACTIVITY</div><div class="dash-metric"><span>4,281</span><i>↗ 18.6%</i></div><div class="dash-chart"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><svg viewBox="0 0 210 62" preserveAspectRatio="none"><path d="M0 52 C18 45 26 56 41 35S70 46 84 26 108 41 124 23 146 37 165 12 188 28 210 2" /></svg></div><div class="dash-legend"><i></i> THIS WEEK <i></i> LAST WEEK</div></div>
+              </div>
+              <div class="project-open"><svg class="icon"><use href="#i-arrow-up" /></svg></div>
+            </a>
+            <div class="project-info"><div><span class="project-index">02 — DASHBOARD CONCEPT</span><h3>Signal / dashboard</h3><p>A glanceable data dashboard concept with clarity at its core.</p><div class="tag-list"><span>UI / UX</span><span>CSS</span><span>DATA VISUALS</span></div></div><a class="project-arrow" href="https://github.com/search?q=dashboard&type=repositories" target="_blank" rel="noreferrer" aria-label="Search GitHub for dashboard projects"><svg class="icon"><use href="#i-arrow-up" /></svg></a></div>
+          </article>
+          <article class="project-card reveal">
+            <a class="project-visual project-visual-three" href="https://github.com/search?q=student+planner&type=repositories" target="_blank" rel="noreferrer" aria-label="Explore study planner interface concept on GitHub">
+              <div class="project-topline"><span>CONCEPT 003</span><span>PRODUCTIVITY / WEB</span></div>
+              <div class="mock-planner">
+                <div class="planner-head"><span>MONDAY<br /><b>14</b></span><span>YOUR WEEK,<br /><b>IN FOCUS.</b></span><i>✳</i></div>
+                <div class="planner-task task-done"><i>✓</i><span><b>Review lecture notes</b><small>INFORMATION SYSTEMS</small></span><em>09:00</em></div>
+                <div class="planner-task task-current"><i>→</i><span><b>Build something new</b><small>PERSONAL PROJECT</small></span><em>11:30</em></div>
+                <div class="planner-task"><i></i><span><b>Take a well-earned break</b><small>RESET & RECHARGE</small></span><em>13:00</em></div>
+                <div class="planner-foot"><span>3 THINGS. ONE DAY.</span><span>+ ADD TASK</span></div>
+              </div>
+              <div class="project-open"><svg class="icon"><use href="#i-arrow-up" /></svg></div>
+            </a>
+            <div class="project-info"><div><span class="project-index">03 — PRODUCT CONCEPT</span><h3>Daylight / study planner</h3><p>A calmer way to map your day, make space to focus, and keep moving forward.</p><div class="tag-list"><span>PRODUCT DESIGN</span><span>HTML</span><span>CSS</span></div></div><a class="project-arrow" href="https://github.com/search?q=student+planner&type=repositories" target="_blank" rel="noreferrer" aria-label="Search GitHub for study planner projects"><svg class="icon"><use href="#i-arrow-up" /></svg></a></div>
+          </article>
+        </div>
+        <div class="work-foot reveal"><span>MORE IN THE WORKS <i class="live-dot"></i></span><a class="inline-link" href="https://github.com/" target="_blank" rel="noreferrer">FIND ME ON GITHUB <svg class="icon"><use href="#i-arrow" /></svg></a></div>
+      </section>
+
+      <section class="journey section-shell section-space" id="journey" aria-labelledby="journey-title">
+        <div class="section-heading reveal"><span class="section-kicker">07 / THE BUILD LOG</span><h2 id="journey-title">My journey<br /><span class="gradient-text">in motion.</span></h2></div>
+        <div class="journey-track">
+          <article class="journey-step reveal"><span>01</span><i></i><small>ORIGIN</small><h3>Childhood</h3><p>Fascinated by motorcycles, engines, and the machines that made the world move.</p></article>
+          <article class="journey-step reveal"><span>02</span><i></i><small>THE DREAM</small><h3>Mechanic</h3><p>Aiming to become a professional mechanic and master the craft hands-on.</p></article>
+          <article class="journey-step reveal"><span>03</span><i></i><small>NEW ROUTE</small><h3>Information Technology</h3><p>Life opened a new lane: learning to build with code, systems, and digital tools.</p></article>
+          <article class="journey-step reveal"><span>04</span><i></i><small>RIGHT NOW</small><h3>IT student</h3><p>Growing technical skills while keeping the mechanic mindset switched on.</p></article>
+          <article class="journey-step reveal"><span>05</span><i></i><small>FUTURE LINE</small><h3>Where both worlds meet</h3><p>Combining automotive knowledge and technology into useful, exciting experiences.</p></article>
+        </div>
+      </section>
+
+      <section class="recognition section-shell section-space" id="recognition" aria-labelledby="recognition-title">
+        <div class="section-heading section-heading-row reveal">
+          <div><span class="section-kicker">08 / ACHIEVEMENTS & MILESTONES</span><h2 id="recognition-title">Proof of<br /><span class="gradient-text">progress.</span></h2></div>
+          <p class="section-side-note">Every skill starts as a signal.<br />These are the ones getting stronger.</p>
+        </div>
+        <div class="milestone-grid">
+          <article class="milestone-card achievement-card reveal"><span class="achievement-image">SCHOOL<br />LOG</span><span class="milestone-index">01</span><span class="milestone-icon">✦</span><span class="milestone-status">ACADEMIC LOG</span><h3>School achievements</h3><p>A place to add verified academic wins, recognitions, and completed school work.</p><span class="milestone-year">ADD WHEN EARNED ↗</span></article>
+          <article class="milestone-card achievement-card reveal"><span class="achievement-image">TRAINING<br />LOG</span><span class="milestone-index">02</span><span class="milestone-icon">◈</span><span class="milestone-status">LEARNING LOG</span><h3>Certificates & training</h3><p>A future-ready card for certificates, technical training, and workshops completed.</p><span class="milestone-year">READY FOR UPDATES</span></article>
+          <article class="milestone-card achievement-card reveal"><span class="achievement-image">BUILD<br />LOG</span><span class="milestone-index">03</span><span class="milestone-icon">⌁</span><span class="milestone-status">PROJECT LOG</span><h3>Seminars & projects</h3><p>Track seminars attended and finished projects here as the journey continues.</p><span class="milestone-year">UNDER CONSTRUCTION</span></article>
+        </div>
+      </section>
+
+      <section class="contact section-shell section-space" id="contact" aria-labelledby="contact-title">
+        <div class="contact-top reveal"><span class="section-kicker">09 / YOUR MOVE</span><span class="contact-coordinate">OPEN CHANNELS <i class="live-dot"></i></span></div>
+        <div class="contact-layout">
+          <div class="contact-copy reveal"><h2 id="contact-title">Got a spark?<br /><span class="gradient-text">Let’s make it.</span></h2><p>Have an idea, an opportunity, or just want to talk about what’s next? I’m all ears.</p><a class="contact-email" href="mailto:aldie.cajanding@gmail.com">aldie.cajanding@gmail.com <svg class="icon"><use href="#i-arrow-up" /></svg></a><div class="contact-socials"><a href="https://github.com/" target="_blank" rel="noreferrer"><svg class="icon"><use href="#i-github" /></svg> GITHUB</a><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer"><svg class="icon"><use href="#i-linkedin" /></svg> LINKEDIN</a></div></div>
+          <form class="contact-form reveal">
+            <div class="form-heading"><span>SEND A TRANSMISSION</span><span>NO SPAM. JUST SIGNAL.</span></div>
+            <label for="contact-name">YOUR NAME</label><input id="contact-name" name="name" type="text" placeholder="How should I address you?" autocomplete="name" required />
+            <label for="contact-email">YOUR EMAIL</label><input id="contact-email" name="email" type="email" placeholder="you@somewhere.com" autocomplete="email" required />
+            <label for="contact-message">WHAT’S ON YOUR MIND?</label><textarea id="contact-message" name="message" rows="3" placeholder="The beginning of something good..." required></textarea>
+            <button class="button button-primary submit-button" type="submit"><span>SEND MESSAGE</span><svg class="icon"><use href="#i-arrow" /></svg></button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <div class="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+      <button class="lightbox-close" type="button" aria-label="Close image preview">×</button>
+      <div class="lightbox-art"><span>GARAGE / VISUAL LOG</span><i></i></div>
+      <div class="lightbox-copy"><span class="section-kicker">MACHINE STUDY</span><h2 id="lightbox-title">Dream machine</h2><p></p></div>
+    </div>
+
+    <footer class="site-footer section-shell">
+      <a class="brand footer-brand" href="#home"><span class="brand-mark">A</span><span>LDIE'S GARAGE</span></a>
+      <span class="footer-note">BUILT WITH PASSION. POWERED BY CURIOSITY.</span>
+      <div class="footer-right"><span>© <span id="current-year">2025</span> ALDIE CAJANDING</span><a href="#home">BACK TO TOP ↑</a></div>
+    </footer>
+  </body>
+</html>
